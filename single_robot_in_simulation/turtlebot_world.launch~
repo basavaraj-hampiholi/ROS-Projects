@@ -1,0 +1,19 @@
+<launch>  
+  <arg name="map_file" default="$(find myrobot)/my_map.yaml"/>
+  <arg name="amcl" default="$(find myrobot)/amcl_demo.launch"/>  
+  <arg name="world_file" default="$(find myrobot)/my_world.world"/>
+
+  <arg name="initial_pose_x" default="0"/>
+  <arg name="initial_pose_y" default="0"/>
+  <arg name="initial_pose_a" default="0"/>
+  
+  <node pkg="map_server" type="map_server" name="mapserver" args="$(arg map_file)" />
+  <node pkg="stage_ros" type="stageros" name="stageros" args="$(arg world_file)"/>
+  
+
+  <include file="$(arg amcl)">	
+	<arg name="initial_pose_x" value="$(arg initial_pose_x)" />
+	<arg name="initial_pose_y" value="$(arg initial_pose_y)" />
+	<arg name="initial_pose_a" value="$(arg initial_pose_a)" />	
+  </include>
+</launch>

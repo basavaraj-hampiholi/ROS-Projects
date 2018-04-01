@@ -1,0 +1,3 @@
+<launch>
+	<node pkg="navigation_under_namespace" type="$(find navigation_under_namespace)/scripts/client_patrol_single.py" name="client_node" output="screen"/>
+</launch>
