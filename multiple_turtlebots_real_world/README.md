@@ -1,4 +1,4 @@
-# Simulation of simultaneous navigation of 2 real robots under namespace
+# Simultaneous navigation of 2 real robots under namespace
 
 Please follow the below steps:
 
